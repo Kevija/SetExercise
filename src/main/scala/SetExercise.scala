@@ -7,21 +7,22 @@ object SetExercise extends App {
   def isPangram(text:String, alpha:String="abcdefghijklmnopqrstuvwxyz"):Boolean = {
 
     val myTextSet = text.toLowerCase().toSet
-   println(myTextSet)
+    println(myTextSet)
 
-    //val alphaSet = alpha.toSet
-  //  println(alphaSet)
+    val alphaSet = alpha.toSet
+    println(alphaSet)
 
-   // val check = myTextSet & alphaSet
-   // check.subsetOf(alphaSet)
-
-    alpha.toSet.subsetOf(myTextSet)
-
+    val check = myTextSet & alphaSet
+    check.subsetOf(alphaSet)
   }
+    //second solution//
+    //  alpha.toSet.subsetOf(myTextSet)
 
-  val myTestText = "The five boxing wizards jump quickly."
-  println(isPangram(myTestText)) //should be true
+    //third solution//
+    //def isPangram(text: String, alpha: String = "abcdefghijklmnopqrstuvwxyz"): Boolean = alpha.toSet.subsetOf(text.toLowerCase.toSet)
 
-}
+    val myTestText = "The five boxing wizards jump quickly."
+    println(isPangram(myTestText)) //should be true
+  }
 
 
